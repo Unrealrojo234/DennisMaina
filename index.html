@@ -3,31 +3,17 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Dr. Dennis Maina - Clinical Physician</title>
+    <title>DENBA - Research & Health Education</title>
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
     />
-    <!-- Bootstrap CSS -->
-    <!-- https://cdnjs.com/libraries/twitter-bootstrap/5.0.0-beta1 -->
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.0-beta1/css/bootstrap.min.css"
-    />
-
-    <!-- Icons: https://getbootstrap.com/docs/5.0/extend/icons/ -->
-    <!-- https://cdnjs.com/libraries/font-awesome -->
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"
-    />
     <style>
       :root {
-        --primary-color: #008080; /* Teal */
-        --secondary-color: #006666; /* Dark Teal */
-        --accent-color: #00b3b3; /* Light Teal */
-        --light-bg: #e6f7f7; /* Very Light Teal */
-        --white: #ffffff;
+        --primary-color: #002366;
+        --secondary-color: #87ceeb;
+        --accent-color: #00509e;
+        --light-bg: #f8f9fa;
         --text-color: #333;
       }
 
@@ -45,13 +31,13 @@
 
       .header {
         background-color: var(--primary-color);
-        color: var(--white);
-        padding: 1.5rem;
+        color: white;
+        padding: 2rem;
         text-align: center;
       }
 
       .nav {
-        background-color: var(--secondary-color);
+        background-color: var(--accent-color);
         padding: 1rem;
         position: sticky;
         top: 0;
@@ -63,110 +49,78 @@
         display: flex;
         justify-content: center;
         gap: 2rem;
+        flex-wrap: wrap;
       }
 
       .nav a {
-        color: var(--white);
+        color: white;
         text-decoration: none;
         font-weight: 500;
-        transition: color 0.3s ease;
+        transition: color 0.3s;
       }
 
       .nav a:hover {
-        color: var(--accent-color);
+        color: var(--secondary-color);
       }
 
       .hero {
-        height: 400px;
+        height: 60vh;
         background: linear-gradient(
-            rgba(0, 102, 102, 0.7),
-            rgba(0, 102, 102, 0.7)
+            rgba(0, 35, 102, 0.8),
+            rgba(0, 80, 158, 0.8)
           ),
-          url("https://images.unsplash.com/photo-1576091160550-2173dba999ef?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80");
+          url("https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80");
         background-size: cover;
         background-position: center;
         display: flex;
         align-items: center;
         justify-content: center;
-        color: var(--white);
         text-align: center;
-      }
-
-      .about {
-        padding: 4rem 2rem;
-        background-color: var(--light-bg);
+        color: white;
       }
 
       .container {
         max-width: 1200px;
         margin: 0 auto;
+        padding: 2rem;
       }
 
-      .profile-img {
-        width: 300px;
-        border-radius: 50%;
-        border: 5px solid var(--primary-color);
-        margin: 2rem auto;
-        display: block;
+      .section-title {
+        text-align: center;
+        margin-bottom: 3rem;
+        color: var(--primary-color);
       }
 
-      .services,
-      .testimonials {
-        padding: 4rem 2rem;
-      }
-
-      .service-grid,
-      .review-grid {
+      .grid {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
         gap: 2rem;
-        margin-top: 2rem;
+        margin: 2rem 0;
       }
 
-      .service-card,
-      .review-card {
-        text-align: center;
+      .card {
+        background: white;
         padding: 2rem;
         border-radius: 10px;
-        box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
-        transition: transform 0.3s ease;
-        background-color: var(--white);
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s;
       }
 
-      .service-card:hover,
-      .review-card:hover {
+      .card:hover {
         transform: translateY(-5px);
       }
 
-      .service-icon {
-        font-size: 2.5rem;
-        color: var(--primary-color);
-        margin-bottom: 1rem;
+      .testimonial-card {
+        border-left: 4px solid var(--secondary-color);
+        padding: 1.5rem;
+        margin: 1rem 0;
       }
 
-      .review-card {
-        text-align: left;
-        position: relative;
-        padding-top: 3rem;
-      }
-
-      .quote-icon {
-        position: absolute;
-        top: 1rem;
-        left: 1rem;
-        color: var(--accent-color);
-        font-size: 1.5rem;
-        opacity: 0.7;
-      }
-
-      .review-rating {
-        color: #ffb400;
-        margin: 0.5rem 0;
-      }
-
-      .contact {
-        background-color: var(--light-bg);
-        padding: 4rem 2rem;
+      .price-card {
+        text-align: center;
+        padding: 2rem;
+        border: 2px solid var(--secondary-color);
+        border-radius: 10px;
       }
 
       .contact-form {
@@ -178,275 +132,190 @@
       textarea {
         width: 100%;
         padding: 0.8rem;
-        margin-bottom: 1rem;
-        border: 2px solid var(--primary-color);
+        margin: 0.5rem 0;
+        border: 2px solid var(--secondary-color);
         border-radius: 5px;
       }
 
       button {
-        background-color: var(--primary-color);
-        color: var(--white);
+        background-color: var(--accent-color);
+        color: white;
         padding: 1rem 2rem;
         border: none;
         border-radius: 5px;
         cursor: pointer;
-        font-size: 1rem;
-        transition: background-color 0.3s ease;
+        transition: background 0.3s;
       }
 
       button:hover {
-        background-color: var(--secondary-color);
+        background-color: var(--primary-color);
+      }
+
+      .stars {
+        color: #ffb400;
+        margin: 0.5rem 0;
       }
 
       footer {
         background-color: var(--primary-color);
-        color: var(--white);
+        color: white;
         text-align: center;
         padding: 2rem;
-      }
-      /* From Uiverse.io by NelsonDJCR */
-      .button2 {
-        display: inline-block;
-        transition: all 0.2s ease-in;
-        position: relative;
-        overflow: hidden;
-        z-index: 1;
-        color: #090909;
-        padding: 0.7em 3.3em 0.7em 1.7em;
-        font-size: 18px;
-        border-radius: 0.5em;
-        background: #e8e8e8;
-        border: 1px solid #e8e8e8;
-        box-shadow: 6px 6px 12px #c5c5c5, -6px -6px 12px #ffffff;
+        margin-top: 3rem;
       }
 
-      .button2 > svg {
-        height: 30px;
-        position: absolute;
-        padding: 0px 5px;
-        margin-top: -4px;
-      }
-
-      .button2:active {
-        color: #666;
-        box-shadow: inset 4px 4px 12px #c5c5c5, inset -4px -4px 12px #ffffff;
-      }
-
-      .button2:before {
-        content: "";
-        position: absolute;
-        left: 50%;
-        transform: translateX(-50%) scaleY(1) scaleX(1.25);
-        top: 100%;
-        width: 140%;
-        height: 180%;
-        background-color: rgba(0, 0, 0, 0.05);
-        border-radius: 50%;
-        display: block;
-        transition: all 0.5s 0.1s cubic-bezier(0.55, 0, 0.1, 1);
-        z-index: -1;
-      }
-
-      .button2:after {
-        content: "";
-        position: absolute;
-        left: 55%;
-        transform: translateX(-50%) scaleY(1) scaleX(1.45);
-        top: 180%;
-        width: 160%;
-        height: 190%;
-        background-color: #009087;
-        border-radius: 50%;
-        display: block;
-        transition: all 0.5s 0.1s cubic-bezier(0.55, 0, 0.1, 1);
-        z-index: -1;
-      }
-
-      .button2:hover {
-        color: #ffffff;
-        border: 1px solid #009087;
-      }
-
-      .button2:hover:before {
-        top: -35%;
-        background-color: #009087;
-        transform: translateX(-50%) scaleY(1.3) scaleX(0.8);
-      }
-
-      .button2:hover:after {
-        top: -45%;
-        background-color: #009087;
-        transform: translateX(-50%) scaleY(1.3) scaleX(0.8);
+      @media (max-width: 768px) {
+        .nav ul {
+          flex-direction: column;
+          text-align: center;
+          gap: 1rem;
+        }
       }
     </style>
   </head>
   <body>
     <header class="header">
-      <h1>Dr. Dennis Maina</h1>
-      <p>MD, Clinical Physician</p>
+      <h1>DENBA Research & Education</h1>
+      <p>Expert-Led Research Training & Services</p>
     </header>
 
     <nav class="nav">
       <ul>
         <li><a href="#about">About</a></li>
         <li><a href="#services">Services</a></li>
-        <li><a href="#reviews">Reviews</a></li>
+        <li><a href="#courses">Courses</a></li>
+        <li><a href="#testimonials">Success Stories</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
     </nav>
 
     <section class="hero">
-      <div class="hero-content">
-        <h2>Compassionate Care for Better Health</h2>
-        <p>20+ Years of Medical Experience</p>
+      <div class="container">
+        <h2>Your Research Success Partner</h2>
+        <p>4+ Years of Excellence in Research Training & Consultancy</p>
+        <button onclick="location.href='#courses'">Explore Courses</button>
       </div>
     </section>
 
-    <section id="about" class="about">
-      <div class="container">
-        <h2>About Dr. Maina</h2>
-
-        <p>
-          Dr. Dennis Maina is a board-certified clinical physician with over two
-          decades of experience in providing comprehensive medical care.
-          Specializing in preventive medicine and chronic disease management,
-          Dr. Maina is dedicated to delivering personalized care to all
-          patients.
-        </p>
-      </div>
-    </section>
-
-    <section id="services" class="services">
-      <div class="container">
-        <h2>Our Services</h2>
-        <div class="service-grid">
-          <div class="service-card">
-            <i class="fas fa-heartbeat service-icon"></i>
-            <h3>Cardiology</h3>
-            <p>Comprehensive heart health assessment and management</p>
-          </div>
-          <div class="service-card">
-            <i class="fas fa-syringe service-icon"></i>
-            <h3>Vaccinations</h3>
-            <p>Immunizations for all age groups</p>
-          </div>
-          <div class="service-card">
-            <i class="fas fa-brain service-icon"></i>
-            <h3>Neurology</h3>
-            <p>Expert care for nervous system disorders</p>
-          </div>
+    <section id="about" class="container">
+      <h2 class="section-title">Why Choose DENBA?</h2>
+      <div class="grid">
+        <div class="card">
+          <i class="fas fa-user-graduate fa-3x"></i>
+          <h3>Expert-Led Training</h3>
+          <p>Learn from experienced researchers and academic professionals</p>
+        </div>
+        <div class="card">
+          <i class="fas fa-chart-line fa-3x"></i>
+          <h3>Proven Results</h3>
+          <p>100+ successful research projects completed</p>
+        </div>
+        <div class="card">
+          <i class="fas fa-handshake fa-3x"></i>
+          <h3>Flexible Learning</h3>
+          <p>Online classes & one-on-one coaching</p>
         </div>
       </div>
     </section>
 
-    <section id="reviews" class="testimonials">
-      <div class="container">
-        <h2>Patient Testimonials</h2>
-        <div class="review-grid">
-          <div class="review-card">
-            <i class="fas fa-quote-left quote-icon"></i>
-            <p>
-              "Dr. Maina's expertise and bedside manner are exceptional. He took
-              time to explain everything clearly and made me feel truly cared
-              for."
-            </p>
-            <div class="review-rating">
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-            </div>
-            <h4>- Sarah Wanjiru</h4>
-            <p>Hypertension Management</p>
-          </div>
-
-          <div class="review-card">
-            <i class="fas fa-quote-left quote-icon"></i>
-            <p>
-              "The best doctor I've ever visited. His diagnostic skills are
-              remarkable and his follow-up care is thorough."
-            </p>
-            <div class="review-rating">
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-            </div>
-            <h4>- James Mwangi</h4>
-            <p>Diabetes Care</p>
-          </div>
-
-          <div class="review-card">
-            <i class="fas fa-quote-left quote-icon"></i>
-            <p>
-              "Dr. Maina helped our family through a difficult health crisis
-              with compassion and professionalism."
-            </p>
-            <div class="review-rating">
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-            </div>
-            <h4>- The Kamau Family</h4>
-            <p>Pediatric Care</p>
-          </div>
+    <section id="services" class="container">
+      <h2 class="section-title">Our Services</h2>
+      <div class="grid">
+        <div class="card">
+          <h3>For Students & Individuals</h3>
+          <ul>
+            <li>Research Methodology Training</li>
+            <li>Thesis/Dissertation Support</li>
+            <li>Data Analysis Coaching</li>
+            <li>Academic Writing Assistance</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>For Institutions</h3>
+          <ul>
+            <li>Grant Proposal Writing</li>
+            <li>Policy Research & Analysis</li>
+            <li>Institutional Surveys</li>
+            <li>Capacity Building Workshops</li>
+          </ul>
         </div>
       </div>
     </section>
 
-    <section id="contact" class="contact">
-      <div class="container">
-        <h2>Contact</h2>
-        <form class="contact-form">
+    <section id="courses" class="container">
+      <h2 class="section-title">Popular Courses</h2>
+      <div class="grid">
+        <div class="card">
+          <h3>Research Methodology</h3>
+          <p>Master qualitative and quantitative research design</p>
+          <div class="stars"><i class="fas fa-star"></i>4.9 (128 reviews)</div>
+        </div>
+        <div class="card">
+          <h3>Data Analysis</h3>
+          <p>SPSS, STATA, NVivo, and Excel mastery</p>
+          <div class="stars"><i class="fas fa-star"></i>4.8 (95 reviews)</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="testimonials" class="container">
+      <h2 class="section-title">Success Stories</h2>
+      <div class="grid">
+        <div class="testimonial-card">
+          <blockquote>
+            "DENBA helped me structure my findings and discussions... scored
+            highly in my project!"
+          </blockquote>
+          <h4>Peter Ndungu</h4>
+          <p>Nursing Student</p>
+          <div class="stars"><i class="fas fa-star"></i>×5</div>
+        </div>
+        <div class="testimonial-card">
+          <blockquote>
+            "The findings have helped us improve service delivery
+            significantly!"
+          </blockquote>
+          <h4>Dr. Patrick Omondi</h4>
+          <p>Hospital Administrator</p>
+          <div class="stars"><i class="fas fa-star"></i>×5</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="container">
+      <h2 class="section-title">Contact Us</h2>
+      <div class="contact-form">
+        <form>
           <input type="text" placeholder="Name" required />
           <input type="email" placeholder="Email" required />
           <textarea rows="5" placeholder="Message" required></textarea>
           <button type="submit">Send Message</button>
         </form>
       </div>
+      <div class="contact-info" style="text-align: center; margin-top: 2rem">
+        <a href="maito:joelarrick97@gmail.com"
+          ><p>📧 joelarrick97@gmail.com</p></a
+        >
 
-      <div class="text-center mt-5">
-        <button class="button2">
-          WhatsApp
-          <svg
-            viewBox="0 0 48 48"
-            y="0px"
-            x="0px"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M4.868,43.303l2.694-9.835C5.9,30.59,5.026,27.324,5.027,23.979C5.032,13.514,13.548,5,24.014,5c5.079,0.002,9.845,1.979,13.43,5.566c3.584,3.588,5.558,8.356,5.556,13.428c-0.004,10.465-8.522,18.98-18.986,18.98c-0.001,0,0,0,0,0h-0.008c-3.177-0.001-6.3-0.798-9.073-2.311L4.868,43.303z"
-              fill="#fff"
-            ></path>
-            <path
-              d="M4.868,43.803c-0.132,0-0.26-0.052-0.355-0.148c-0.125-0.127-0.174-0.312-0.127-0.483l2.639-9.636c-1.636-2.906-2.499-6.206-2.497-9.556C4.532,13.238,13.273,4.5,24.014,4.5c5.21,0.002,10.105,2.031,13.784,5.713c3.679,3.683,5.704,8.577,5.702,13.781c-0.004,10.741-8.746,19.48-19.486,19.48c-3.189-0.001-6.344-0.788-9.144-2.277l-9.875,2.589C4.953,43.798,4.911,43.803,4.868,43.803z"
-              fill="#fff"
-            ></path>
-            <path
-              d="M24.014,5c5.079,0.002,9.845,1.979,13.43,5.566c3.584,3.588,5.558,8.356,5.556,13.428c-0.004,10.465-8.522,18.98-18.986,18.98h-0.008c-3.177-0.001-6.3-0.798-9.073-2.311L4.868,43.303l2.694-9.835C5.9,30.59,5.026,27.324,5.027,23.979C5.032,13.514,13.548,5,24.014,5 M24.014,42.974C24.014,42.974,24.014,42.974,24.014,42.974C24.014,42.974,24.014,42.974,24.014,42.974 M24.014,42.974C24.014,42.974,24.014,42.974,24.014,42.974C24.014,42.974,24.014,42.974,24.014,42.974 M24.014,4C24.014,4,24.014,4,24.014,4C12.998,4,4.032,12.962,4.027,23.979c-0.001,3.367,0.849,6.685,2.461,9.622l-2.585,9.439c-0.094,0.345,0.002,0.713,0.254,0.967c0.19,0.192,0.447,0.297,0.711,0.297c0.085,0,0.17-0.011,0.254-0.033l9.687-2.54c2.828,1.468,5.998,2.243,9.197,2.244c11.024,0,19.99-8.963,19.995-19.98c0.002-5.339-2.075-10.359-5.848-14.135C34.378,6.083,29.357,4.002,24.014,4L24.014,4z"
-              fill="#cfd8dc"
-            ></path>
-            <path
-              d="M35.176,12.832c-2.98-2.982-6.941-4.625-11.157-4.626c-8.704,0-15.783,7.076-15.787,15.774c-0.001,2.981,0.833,5.883,2.413,8.396l0.376,0.597l-1.595,5.821l5.973-1.566l0.577,0.342c2.422,1.438,5.2,2.198,8.032,2.199h0.006c8.698,0,15.777-7.077,15.78-15.776C39.795,19.778,38.156,15.814,35.176,12.832z"
-              fill="#40c351"
-            ></path>
-            <path
-              clip-rule="evenodd"
-              d="M19.268,16.045c-0.355-0.79-0.729-0.806-1.068-0.82c-0.277-0.012-0.593-0.011-0.909-0.011c-0.316,0-0.83,0.119-1.265,0.594c-0.435,0.475-1.661,1.622-1.661,3.956c0,2.334,1.7,4.59,1.937,4.906c0.237,0.316,3.282,5.259,8.104,7.161c4.007,1.58,4.823,1.266,5.693,1.187c0.87-0.079,2.807-1.147,3.202-2.255c0.395-1.108,0.395-2.057,0.277-2.255c-0.119-0.198-0.435-0.316-0.909-0.554s-2.807-1.385-3.242-1.543c-0.435-0.158-0.751-0.237-1.068,0.238c-0.316,0.474-1.225,1.543-1.502,1.859c-0.277,0.317-0.554,0.357-1.028,0.119c-0.474-0.238-2.002-0.738-3.815-2.354c-1.41-1.257-2.362-2.81-2.639-3.285c-0.277-0.474-0.03-0.731,0.208-0.968c0.213-0.213,0.474-0.554,0.712-0.831c0.237-0.277,0.316-0.475,0.474-0.791c0.158-0.317,0.079-0.594-0.04-0.831C20.612,19.329,19.69,16.983,19.268,16.045z"
-              fill-rule="evenodd"
-              fill="#fff"
-            ></path>
-          </svg>
-        </button>
+        <a href="tel:+254 743669711">
+          <p>📞 +254 743669711</p>
+        </a>
       </div>
     </section>
 
     <footer>
-      <p>&copy; 2025 Dr. Dennis Maina. All rights reserved.</p>
+      <p>© 2023 DENBA Research & Education. All rights reserved.</p>
+      <div style="margin-top: 1rem">
+        <a href="#" style="color: white; margin: 0 1rem"
+          ><i class="fab fa-linkedin"></i
+        ></a>
+        <a href="#" style="color: white; margin: 0 1rem"
+          ><i class="fab fa-twitter"></i
+        ></a>
+        <a href="#" style="color: white; margin: 0 1rem"
+          ><i class="fab fa-facebook"></i
+        ></a>
+      </div>
     </footer>
   </body>
 </html>
